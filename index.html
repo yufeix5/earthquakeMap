@@ -76,7 +76,7 @@
       <div id="map"></div>
     </main>
     <div id="side-panel">
-      <h2>Airports List</h2>
+      <h2>Washington State Airports List</h2>
       <button onclick=sortTable()>Sort by Elevation</button>
 
       <table>
@@ -95,15 +95,15 @@
       let map = new mapboxgl.Map({
         container: "map", // container ID
         style: "mapbox://styles/mapbox/dark-v10", // style URL
-        zoom: 3, // starting zoom
-        center: [-101, 47], // starting center
+        zoom: 6.5, // starting zoom
+        center: [-119, 47.608013], // starting center
       });
 
       async function geojsonFetch() {
         let response, earthquakes, japan, table;
-        response = await fetch("assets/airports.geojson");
+        response = await fetch("assets/airport.geojson");
         earthquakes = await response.json();
-        response = await fetch("assets/us-states.geojson");
+        response = await fetch("assets/state.geojson");
         japan = await response.json();
 
         table = document.getElementsByTagName("table")[0];
